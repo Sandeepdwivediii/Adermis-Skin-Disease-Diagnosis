@@ -347,9 +347,9 @@ gunicorn --bind 0.0.0.0:5000 gateway:app
 
 **Adermis** is developed by a dedicated team from IIIT Allahabad:
 
-- **Maskeen Singh** - Chief ML Architect & AI Specialist
-- **Sandeep Dwivedi** - Lead UI/UX Architect & Backend Engineering Lead  
-- **Gautam Khokhar** - Engineering Lead & Scalable Architecture Specialist
+- **Maskeen Singh** -
+- **Sandeep Dwivedi** - 
+- **Gautam Khokhar** -
 
 ## ⚖️ Medical Disclaimer
 
