@@ -726,6 +726,4 @@ JSON Response
 
 ---
 
-# One-Line Summary
 
-This service exposes a Flask API that accepts a skin image, preprocesses it into a normalized tensor, performs inference using a cached PyTorch CNN model, converts predictions into probabilities using Softmax, extracts the top three disease classes, and returns them as a structured JSON response.
