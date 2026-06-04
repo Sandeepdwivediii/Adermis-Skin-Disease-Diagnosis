@@ -1,92 +1,70 @@
-# Skin Disease Prediction Web App
+# Adermis Project Overview
 
-A full-stack AI-powered web application to predict skin diseases from user-uploaded images and provide follow-up analysis and treatment recommendations.
-
----
-
-## 📌 Features
-
-- Skin image analysis using a pre-trained deep learning model.
-- Follow-up questions for refining diagnosis via custom logic or ML.
-- Disease-specific solution page with Ayurvedic, home remedies, OTC, and prescription treatments.
-- Built using Next.js, TailwindCSS, and Python backend (Flask/FastAPI).
-- Secure client-server communication with binary-encoded requests and responses.
+This folder contains the implementation for the Adermis application. The README files alongside the code explain the backend, frontend, and service boundaries in detail.
 
 ---
 
-## Architecture Overview
+## Documentation Index
 
-Frontend (Next.js) <--> API Gateway <--> ML Server (Python)
-                                        |
-                                        --> Image Classification Model
-                                        --> Follow-up Logic Handler
-
----
-
-
-## Getting Started
-
-## # 1. Clone the repository
-
-Using git clone command clone the repository
-
-## # 2. Set up the backend
-
-cd backend
-pip install -r requirements.txt
-python app.py
-
-
-## # 3. Set up the frontend
-
-cd ../frontend
-npm install
-npm run dev
+* [Backend platform](backend/README.md)
+* [Frontend app](adermis/README.md)
+* [Auth service](backend/services/auth/README.md)
+* [LLM service](backend/services/llm/README.md)
+* [Clinic service](backend/services/clinic/README.md)
 
 ---
 
-## 📝 Treatment Format
+## What This Project Is
 
-The final solution page displays treatments in this order:
-
-1. **Ayurvedic Solution** 🪔
-2. **Home Remedies** 🏡
-3. **Over-the-counter (OTC)** 💊
-4. **Prescription Drugs** 🧾
-
-Each with a short 1–2 line explanation.
+Adermis is a guided skin-disease screening product. The backend handles authentication, analysis orchestration, language-model enrichment, clinic lookup, and scan persistence. The frontend presents those capabilities as one linear user experience.
 
 ---
 
-## 🧪 Testing
+## High-Level Architecture
 
-To test the model and flow:
-
-1. Upload a valid image of a skin condition.
-2. Fill follow-up form (dynamic based on prediction).
-3. View final disease + treatments on `/solution`.
-
----
-
-## 📚 Future Enhancements
-
-- User authentication and history tracking
-- Multilingual support for rural accessibility
-- Integration with dermatologists or telehealth platforms
-- Feedback loop for improving model accuracy
+```mermaid
+flowchart LR
+    UI[Frontend: Next.js] --> GW[Backend: Flask gateway]
+    GW --> AUTH[Auth service]
+    GW --> LLM[LLM service]
+    GW --> CLINIC[Clinic service]
+    GW --> DB[(MongoDB)]
+    LLM --> GEMINI[Google Gemini]
+    CLINIC --> MAPS[Google Maps / Places]
+```
 
 ---
 
-## 👨‍⚕️ Disclaimer
+## Product Journey
 
-This app is for **educational and informational purposes only**. It is **not a substitute for professional medical advice**. Always consult a certified dermatologist for real-world concerns.
+```mermaid
+flowchart TD
+    A[Open landing page] --> B[Sign in or register]
+    B --> C[Upload image]
+    C --> D[Prediction and follow-up]
+    D --> E[Treatment summary]
+    E --> F[Clinic discovery]
+    E --> G[Saved history]
+```
 
 ---
 
-## 🧑‍💻 Contributing
+## Where To Read Next
 
-1. Fork the repo
-2. Create your feature branch: `git checkout -b feature/xyz`
-3. Commit your changes: `git commit -am 'Add xyz'`
-4. Push to the branch: `git push origin feature/xyz`
-5. Submit a pull request
+1. [Backend platform](backend/README.md)
+2. [Frontend app](adermis/README.md)
+3. [Auth service](backend/services/auth/README.md)
+4. [LLM service](backend/services/llm/README.md)
+5. [Clinic service](backend/services/clinic/README.md)
+
+---
+
+## Setup Note
+
+Use the backend and frontend READMEs for the exact startup commands and environment variables.
+
+---
+
+## Disclaimer
+
+Adermis is intended for educational and preliminary screening purposes only. It does not replace professional medical diagnosis or treatment.

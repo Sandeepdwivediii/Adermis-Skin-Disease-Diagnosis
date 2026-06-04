@@ -1,5 +1,7 @@
 # 🩺 Skin Disease Detection ML Service
 
+> Canonical deep-dive documentation now lives in [README.md](README.md). This file is kept as a compatibility copy for the existing folder structure.
+
 ## Overview
 
 This service provides an API for skin disease classification using a Convolutional Neural Network (CNN) built with PyTorch and served through Flask.
